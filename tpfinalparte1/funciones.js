@@ -1,4 +1,3 @@
-//por ahora no ando el programa porque falta la funcion cargar imagenes que habiamos hecho (la cambiamos a cargar pantalla)
 //textoPerzonalizado en cargarPantalla
 //remplazar todo
 //ver como hace que solo tengamos que escribir boton una vez, preguntar al profe x nuestra situacion
@@ -15,6 +14,7 @@ function cargarPantalla(imagenes, texto, x, y, alineacion, rectTam) {//borrar an
   fill(255);
   text(texto, x+30, y+20, width-50);
   
+
 }
 
 function textoPersonalizado(texto, x, y, tam, tono, borde, alineacion) {
