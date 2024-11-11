@@ -1,13 +1,13 @@
 //ver como hace que solo tengamos que escribir boton una vez, preguntar al profe x nuestra situacion
-//cómo hacemos para achicar la parte de créditos
+//cómo hacemos para achicar la parte de créditos---->hacemos una imagen
 
 //-----------PANTALLAS-------------------
-function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, tono, borde, alineacion, aliT, rectTam) {//borrar ancho y alto en la función
+function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, tono, borde, alineacion, aliT, rectTam) {
   imageMode(alineacion);
   image(imagenes, x, y);
   noStroke();
   fill(0, 150);
-  rect(x, y, width, rectTam);//parametro para modificar alto del cuadrado dependiendo el alto de tu texto
+  rect(x, y, width, rectTam);//parametro para modificar alto del cuadrado (fondo) dependiendo el alto de tu texto
   stroke(borde);
   textAlign(aliT);
   textSize(tamT);
