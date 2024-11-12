@@ -10,7 +10,7 @@ let sonido;
 let musica;
 
 function preload() {
-  for (let i=0; i<17; i++) {
+  for (let i=0; i<18; i++) {
     imagenes[i] = loadImage("data/pant"+i+".jpg");
   }
   bestiario=loadStrings("data/bestiario.txt");
@@ -42,14 +42,10 @@ function draw() {
 
     //CRÉDITOS
   } else if (estado==="creditos") {
-    textoPersonalizado("Créditos", width/2, 100, 80, 255, 0, CENTER);//cómo hacer que esto se vea en una sola línea
-    textoPersonalizado("Bestiario de Julio Cortázar", width/2, 170, 35, 255, 0, CENTER);
-    textoPersonalizado("Trabajo Final de pmiw", width/2, 230, 20, 255, 0, CENTER);
-    textoPersonalizado("Imágenes hechas con ia", width/2, 350, 20, 255, 0, CENTER);
-    textoPersonalizado("Ana Paz Parietti 9353/8", width/2, 265, 25, 255, 0, CENTER);
-    textoPersonalizado("Imágenes hechas con ia", width/2, 300, 25, 255, 0, CENTER);
-    //botón
-    botonDibujo("Volver", 20, 20, 120, 50);
+    cargarPantalla2(imagenes[17], 0, 0, RIGHT);
+
+      //botón
+      botonDibujo("Volver", 0, 0, 120, 50);
 
     //CAP1 PANTALLA2
   } else if (estado==="pant2") {
@@ -157,7 +153,7 @@ function draw() {
     //PANTALLA 18 te quedas en tu cuarto cuando la familia se va de viaje
   } else if (estado==="pant18") { // isa no va al viaje y se queda en su cuarto
     cargarPantalla(imagenes[10], bestiario[17], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-   //botones
+      //botones
       botonDibujo("Continuar", 100, 400, 200, 50);
   } else {
     cargarPantalla(imagenes[0], bestiario[18], 0, 0, 10, 100, 100, 255, 0, RIGHT, CENTER);
@@ -177,7 +173,7 @@ function mousePressed() {
       estado="creditos";
     }
   } else if (estado==="creditos") {
-    if (botonUso(20, 20, 120, 50)) {
+    if (botonUso(0, 0, 120, 50)) {
       estado="comienzo";
     }
   } else if (estado==="pant2") {

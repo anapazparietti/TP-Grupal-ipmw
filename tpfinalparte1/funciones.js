@@ -1,5 +1,4 @@
 //ver como hace que solo tengamos que escribir boton una vez, preguntar al profe x nuestra situacion
-//cómo hacemos para achicar la parte de créditos---->hacemos una imagen
 
 //-----------PANTALLAS-------------------
 function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, tono, borde, alineacion, aliT, rectTam) {
@@ -13,18 +12,11 @@ function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, tono, borde, alinea
   textSize(tamT);
   fill(tono);
   text(texto, xT, yT, width-50);
-  
-
 }
 
-function textoPersonalizado(texto, x, y, tam, tono, borde, alineacion) {
-  push();
-  textSize(tam);
-  fill(tono);
-  stroke(borde);
-  textAlign(alineacion);
-  text(texto, x, y);
-  pop();
+function cargarPantalla2(imagenes, x, y, alineacion) {
+  imageMode(alineacion);
+  image(imagenes, x, y);
 }
 
 //--------------BOTONES----------------
