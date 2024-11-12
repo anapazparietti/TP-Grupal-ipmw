@@ -35,7 +35,7 @@ function draw() {
 
   //INICIO
   if (estado ==="comienzo") {
-    cargarPantalla(imagenes[0], bestiario[18], 0, 0, 10, 100, 100, 255, 0, RIGHT, CENTER);
+    cargarPantalla(imagenes[0], bestiario[18], 0, 0, 10, 100, 100, CENTER);
     //botones
     botonDibujo("Créditos", 350, 400, 120, 50);
     botonDibujo("Comenzar", 100, 400, 200, 50);
@@ -44,119 +44,119 @@ function draw() {
   } else if (estado==="creditos") {
     cargarPantalla2(imagenes[17], 0, 0, RIGHT);
 
-      //botón
-      botonDibujo("Volver", 0, 0, 120, 50);
+    //botón
+    botonDibujo("Volver", 0, 0, 120, 50);
 
     //CAP1 PANTALLA2
   } else if (estado==="pant2") {
-    cargarPantalla(imagenes[1], bestiario[0], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Continuar", 350, 400, 150, 50);
+    cargarPantalla(imagenes[1], bestiario[0], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Continuar", 350, 400, 150, 50);
 
     //CAP2 PANTALLA3
   } else if (estado==="pant3") {
-    cargarPantalla(imagenes[2], bestiario[1], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Explorar la casa", 370, 400, 200, 50);
+    cargarPantalla(imagenes[2], bestiario[1], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Explorar la casa", 370, 400, 200, 50);
     botonDibujo("Quedarte con tus primos", 35, 400, 300, 50);
 
     //CAP3 PANTALLA 4
   } else if (estado==="pant4") {//si elegis jugar con tus primos
-    cargarPantalla(imagenes[3], bestiario[2], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //boton
-      botonDibujo("Ir a cenar", 200, 400, 200, 50);
+    cargarPantalla(imagenes[3], bestiario[2], 0, 0, 30, 20, 20, LEFT, 150);
+    //boton
+    botonDibujo("Ir a cenar", 200, 400, 200, 50);
 
     //CAP5-6 PANTALLA 5
   } else if (estado==="pant5") {//capitulo5/6 cena y se habla del viaje
-    cargarPantalla(imagenes[4], bestiario[3], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Ir al viaje", 100, 400, 200, 50);
+    cargarPantalla(imagenes[4], bestiario[3], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Ir al viaje", 100, 400, 200, 50);
     botonDibujo("No ir al viaje", 350, 400, 200, 50);
 
     //CAP5-6 PANTALLA 6
   } else if (estado==="pant6") {//si elegis ir al viaje, te cuentan la reglas
-    cargarPantalla(imagenes[4], bestiario[4], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //boton
-      botonDibujo("Continuar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[4], bestiario[4], 0, 0, 30, 20, 20, LEFT, 150);
+    //boton
+    botonDibujo("Continuar", 100, 400, 200, 50);
 
     //CAP 8-9 PANTALLA 7
   } else if (estado==="pant7") {//capitulo 8/9 vuelven del viaje e isabel tiene un encuentro con el tigre
-    cargarPantalla(imagenes[5], bestiario[5], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Quedarse en la casa", 330, 400, 250, 50);
+    cargarPantalla(imagenes[5], bestiario[5], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Quedarse en la casa", 330, 400, 250, 50);
     botonDibujo("Irte de la casa", 100, 400, 200, 50);//se va de la casa, FINAL ALT 4
 
     //CAP10 PANTALLA 8
   } else if (estado==="pant8") {//se queda en la casa y la historia continua, le preguntan dónde está el tigre
-    cargarPantalla(imagenes[6], bestiario[6], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Biblioteca", 350, 400, 130, 50);
+    cargarPantalla(imagenes[6], bestiario[6], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Biblioteca", 350, 400, 130, 50);
     botonDibujo("Estudio de Nene", 100, 400, 200, 50);
 
     //FINAL REAL PANTALLA 9
   } else if (estado==="pant9") {//FINAL REAL, ELEGISTE ESTUDIO
-    cargarPantalla(imagenes[8], bestiario[7], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //boton
-      botonDibujo("Volver a jugar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[8], bestiario[7], 0, 0, 30, 20, 20, LEFT, 150);
+    //boton
+    botonDibujo("Volver a jugar", 100, 400, 200, 50);
 
     //FINAL ALT 1 PANTALLA 10
   } else if (estado==="pant10") {
-    cargarPantalla(imagenes[7], bestiario[8], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //boton
-      botonDibujo("Volver a jugar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[7], bestiario[8], 0, 0, 30, 20, 20, LEFT, 150);
+    //boton
+    botonDibujo("Volver a jugar", 100, 400, 200, 50);
 
     //PANTALLA 11, elegiste explorar la cocina
   } else if (estado==="pant11") {
-    cargarPantalla(imagenes[11], bestiario[9], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Confiar en Nino", 100, 400, 200, 50);
+    cargarPantalla(imagenes[11], bestiario[9], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Confiar en Nino", 100, 400, 200, 50);
     botonDibujo("No confiar en Nino", 350, 400, 210, 50);
 
     // PANTALLA12, VAS A EXPLORAR A BIBLIOTECA, DESPUÉS VAS A CENAR
   } else if (estado==="pant12") {
-    cargarPantalla(imagenes[16], bestiario[11], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //boton
-      botonDibujo("Ir a la cena", 100, 400, 200, 50);
+    cargarPantalla(imagenes[16], bestiario[11], 0, 0, 30, 20, 20, LEFT, 150);
+    //boton
+    botonDibujo("Ir a la cena", 100, 400, 200, 50);
 
     //PANTALLA 13, decidiste no ir al viaje familiar
   } else if (estado==="pant13") {
-    cargarPantalla(imagenes[14], bestiario[12], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Quedarse en el cuarto", 80, 400, 250, 50);
+    cargarPantalla(imagenes[14], bestiario[12], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Quedarse en el cuarto", 80, 400, 250, 50);
     botonDibujo("Ir a explorar", 380, 400, 140, 50);//ir a explorar
 
     //PANTALLA 14
   } else if (estado==="pant14") { //FINAL ALT 2, solo si no confías en nino, no viajas y decidís explorar.
-    cargarPantalla(imagenes[15], bestiario[13], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Volver a jugar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[15], bestiario[13], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Volver a jugar", 100, 400, 200, 50);
 
     //PANTALLA 15 FINAL ALT 4 final feliz
   } else if (estado==="pant15") { // la historia continúa, te preguntan donde esta el tigre y elegís biblioteca
-    cargarPantalla(imagenes[12], bestiario[14], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Volver a jugar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[12], bestiario[14], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Volver a jugar", 100, 400, 200, 50);
 
     //FINAL ALT 3 ISABEL SE VA
   } else if (estado==="pant16") { // isabel se va de la casa
-    cargarPantalla(imagenes[9], bestiario[15], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Volver a jugar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[9], bestiario[15], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Volver a jugar", 100, 400, 200, 50);
 
     //PANTALLA 17, explorar la casa al principio
   } else if (estado==="pant17") {
-    cargarPantalla(imagenes[13], bestiario[16], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Ir a la cocina", 100, 400, 200, 50);
+    cargarPantalla(imagenes[13], bestiario[16], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Ir a la cocina", 100, 400, 200, 50);
     botonDibujo("Ir a la biblioteca", 350, 400, 200, 50);
 
     //PANTALLA 18 te quedas en tu cuarto cuando la familia se va de viaje
   } else if (estado==="pant18") { // isa no va al viaje y se queda en su cuarto
-    cargarPantalla(imagenes[10], bestiario[17], 0, 0, 30, 20, 20, 255, 0, RIGHT, LEFT, 150)
-      //botones
-      botonDibujo("Continuar", 100, 400, 200, 50);
+    cargarPantalla(imagenes[10], bestiario[17], 0, 0, 30, 20, 20, LEFT, 150);
+    //botones
+    botonDibujo("Continuar", 100, 400, 200, 50);
   } else {
-    cargarPantalla(imagenes[0], bestiario[18], 0, 0, 10, 100, 100, 255, 0, RIGHT, CENTER);
+    cargarPantalla2(imagenes[17], 0, 0, RIGHT);
   }
 }
 

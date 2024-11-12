@@ -1,16 +1,17 @@
-//ver como hace que solo tengamos que escribir boton una vez, preguntar al profe x nuestra situacion
+//remplazar con los nuevos parametros
+//PONER PUNTO Y COMA
 
 //-----------PANTALLAS-------------------
-function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, tono, borde, alineacion, aliT, rectTam) {
-  imageMode(alineacion);
+function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, aliT, rectTam) {
+  imageMode(RIGHT);
   image(imagenes, x, y);
   noStroke();
   fill(0, 150);
   rect(x, y, width, rectTam);//parametro para modificar alto del cuadrado (fondo) dependiendo el alto de tu texto
-  stroke(borde);
+  stroke(0);
   textAlign(aliT);
   textSize(tamT);
-  fill(tono);
+  fill(255);
   text(texto, xT, yT, width-50);
 }
 
