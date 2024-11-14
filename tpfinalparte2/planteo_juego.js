@@ -11,6 +11,8 @@ JUEGO:
 --Ganar
 --Perder
 -Un tiempo (20 segundos)
+en la clase juego se cargan las imagenes, se define el estado.
+pensar td como la programaci'on con funciones
 
 REGLAS:
 -Evitar chocar obstaculos(saltar y agacharte)
