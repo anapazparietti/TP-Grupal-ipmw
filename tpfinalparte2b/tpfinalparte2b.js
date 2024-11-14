@@ -14,7 +14,8 @@ function draw() {
 }
 
 function keyPressed() {
-   main.eventos(keyCode);
+  main.eventos(keyCode);
 }
 function mousePressed() {
+main.estados();
 }
