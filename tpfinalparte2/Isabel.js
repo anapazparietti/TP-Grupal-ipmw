@@ -37,7 +37,7 @@ class Player {
       return true;
     }
   }
-//teclas jugador---
+  //teclas jugador---
   teclaPresionada() {
     if (keyIsPressed && keyCode == LEFT_ARROW) {
       this.moverIzquierda();

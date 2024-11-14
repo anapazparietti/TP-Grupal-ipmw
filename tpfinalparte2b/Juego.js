@@ -19,11 +19,11 @@ class Juego {
   colisiones() {
   }
 
-  eventos() {
-    if (keyIsPressed) {
-      if (keyCode === UP_ARROW) {
-        this.obstacle.movimiento();
-      }
+  eventos(keyCode) {
+    if (keyCode === RIGHT_ARROW && keyIsPressed === true) {
+      //if (keyIsPressed === true) {
+      this.obstacle.movimiento();
+      //}
     }
   }
 

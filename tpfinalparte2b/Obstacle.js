@@ -7,17 +7,29 @@ class Obstacle {
     this.y = oy-otam;
     this.ancho = otam;
     this.alto = otam;
+    this.activo = false;
     //this.sprite = image(visual,px,py,ptam,ptam*1.5);//pensar en utilizar un resize, acordar de achicar las imagenes para que no sea pesado
   }
-  
+
   mostrar() {
     push();
-    fill(0,0,255);
-    rect(this.x,this.y,this.ancho,this.alto);
+    fill(0, 0, 255);
+    rect(this.x, this.y, this.ancho, this.alto);
     pop();
+    if (this.activo) {
+      this.movimiento();
+    } else {
+      this.activo = false;
+    }
   }
-  
-  movimiento(){
-  this.x -=1;
+
+  //actualizar() {
+  //  if(this.activo);
+  //  this.movimiento();
+  //}
+
+  movimiento() {
+    this.activo=true;
+    this.x -= 10;
   }
 }
