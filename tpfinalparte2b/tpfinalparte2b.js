@@ -11,11 +11,11 @@ function setup() {
 
 function draw() {
   main.mostrar();
+  if (keyIsPressed === true) {
+    main.eventos(keyCode);
+  }
 }
 
-function keyPressed() {
-  main.eventos(keyCode);
-}
 function mousePressed() {
-main.estados();
+  main.estados();
 }

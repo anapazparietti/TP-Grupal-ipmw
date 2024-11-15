@@ -26,6 +26,5 @@ Cuando el personaje avanza, el fondo y el piso se mueve en sentido opuesto, tray
 Cuando el personaje retrocede o se queda quieto, el tigre avanza
 
 EXTRA
-tener una barra que indica cuánto falta para llegar
 un tiempo limite para llegar a la meta
 */

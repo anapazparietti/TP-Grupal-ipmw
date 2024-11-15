@@ -1,13 +1,13 @@
 class Juego {
   constructor() {
     this.data = new Archivos();
-    this.isa = new Player(width/2, height-80, 120);
-    this.obstacle = new Obstacle(width-50, height-80, 90);
-    this.tigre = new Enemy();
+    this.isa = new Player(width/2, height-80, 100);
+    this.obstacle = new Obstacle(width-50, height-80, 90, 90);
+    this.tigre = new Enemy(0, height-80, 100, 200);
     this.estado = "inicio";
   }
 
-  mostrar() {
+  mostrar() {//que aca se llame solo la pantalla actual, y haya un método (o una clase) en el que se expecifica que se ve en cada pantalla
     if (this.estado === "inicio") {
       background(0, 255, 0);
       fill(255);
@@ -19,9 +19,14 @@ class Juego {
       rect(0, 0, 100, 50);//ganar
       rect(width-100, 0, 100, 50);//perder
       fill(0, 255, 0);
+      this.tigre.mostrar();
       rect(0, height-80, width, 80);//piso
       this.isa.mostrar();
       this.obstacle.mostrar();
+      if(this.obstacle.calcularColision(this.tigre.x, this.tigre.ancho)){
+        console.log("CHOCO");
+        this.obstacle.x=this.obstacle.x+width+this.obstacle.ancho;
+      }
       pop();
     } else if (this.estado === "perder") {
       background(255, 255, 0);
@@ -39,9 +44,13 @@ class Juego {
   colisiones() {
   }
 
-  eventos(keyCode) {
-    if (keyCode === RIGHT_ARROW && keyIsPressed === true) {
-      this.obstacle.movimiento();
+  eventos(keyCode) {//cambiar eventos(nombre) por teclas
+    if (keyCode === RIGHT_ARROW) {
+      this.obstacle.movimientoAvanzan();
+    }
+    if (keyCode === LEFT_ARROW) {
+      this.obstacle.movimientoRetroceden();
+      this.tigre.movimientoAvanza();
     }
   }
 
