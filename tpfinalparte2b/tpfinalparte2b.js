@@ -19,3 +19,7 @@ function draw() {
 function mousePressed() {
   main.estados();
 }
+
+function keyPressed() {
+  main.tecla(keyCode);
+}

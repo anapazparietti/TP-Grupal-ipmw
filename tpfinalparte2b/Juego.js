@@ -23,7 +23,7 @@ class Juego {
       rect(0, height-80, width, 80);//piso
       this.isa.mostrar();
       this.obstacle.mostrar();
-      if(this.obstacle.calcularColision(this.tigre.x, this.tigre.ancho)){
+      if (this.obstacle.calcularColision(this.tigre.x, this.tigre.ancho)) {
         console.log("CHOCO");
         this.obstacle.x=this.obstacle.x+width+this.obstacle.ancho;
       }
@@ -44,7 +44,7 @@ class Juego {
   colisiones() {
   }
 
-  eventos(keyCode) {//cambiar eventos(nombre) por teclas
+  eventos(keyCode) {//cambiar eventos(nombre) por teclaIsPressed
     if (keyCode === RIGHT_ARROW) {
       this.obstacle.movimientoAvanzan();
     }
@@ -53,6 +53,14 @@ class Juego {
       this.tigre.movimientoAvanza();
     }
   }
+
+  tecla(keyCode) {
+    if (keyCode === UP_ARROW) {
+      console.log("UP");
+      this.isa.saltar();
+    }
+  }
+
 
   estados() {
     if (this.estado==="inicio") {
