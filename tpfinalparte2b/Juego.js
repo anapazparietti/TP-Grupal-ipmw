@@ -1,3 +1,4 @@
+//ACORDARSE DE QUE EL JUEGO SE DEBE REINICIAR
 class Juego {
   constructor() {
     this.data = new Archivos();
@@ -17,15 +18,21 @@ class Juego {
       background(200);
       fill(255);
       rect(0, 0, 100, 50);//ganar
-      rect(width-100, 0, 100, 50);//perder
+      //rect(width-100, 0, 100, 50);//perder
       fill(0, 255, 0);
       this.tigre.mostrar();
       rect(0, height-80, width, 80);//piso
       this.isa.mostrar();
       this.obstacle.mostrar();
+      //los obstaculos desaparecen y reaparecen---
       if (this.obstacle.calcularColision(this.tigre.x, this.tigre.ancho)) {
         console.log("CHOCO");
         this.obstacle.x=this.obstacle.x+width+this.obstacle.ancho;
+      }
+      //PERDER----
+      if (this.tigre.calcularColision(this.isa.x, this.isa.ancho)) {
+        console.log("tigre toca a isa");
+        this.estado = "perder";
       }
       pop();
     } else if (this.estado === "perder") {
@@ -70,10 +77,10 @@ class Juego {
       }
     }
     if (this.estado==="juego") {
-      if (this.botonZona(width-100, 0, 100, 50)) {
-        console.log('click');
-        this.estado = "perder";
-      } else if (this.botonZona(0, 0, 100, 50)) {
+      /* if (this.botonZona(width-100, 0, 100, 50)) {
+       console.log('click');
+       this.estado = "perder";
+       } else */      if (this.botonZona(0, 0, 100, 50)) {
         this.estado ="ganar";
       }
     }
