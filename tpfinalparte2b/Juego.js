@@ -5,7 +5,7 @@ class Juego {
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
     this.tigre = new Enemy(0, height-80, 100, 200);
-    this.meta = new Meta(width*4, height-80, 200, 50);
+    this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
     this.menu= new Portada();
   }
@@ -53,19 +53,16 @@ class Juego {
     }
 
     //PERDER----
-    //if (this.tigre.calcularColision(this.isa.x, this.isa.y, this.isa.ancho)) {
-    //  console.log("tigre toca a isa");
-    //  this.estado = "perder";
-    //}
-    if (this.colisiones(this.tigre.x, this.isa.x, this.tigre.y, this.isa.y, this.isa.ancho, this.isa.alto)) {
+    if (this.isa.calcularColision(this.tigre.x, this.tigre.ancho)) {
+      console.log("Tigre tocó a Isa");
       this.estado = "perder";
+    } 
+   //GANAR----
+    if (this.isa.calcularColision(this.meta.x, this.meta.ancho)) {
+      console.log("ganaste :)");
+      this.estado = "ganar";
     }
-
-    //GANAR----
-    //if (this.meta.calcularColision(this.isa.x, this.isa.y, this.isa.ancho, this.isa.alto)) {
-    //  console.log("ganaste");
-    //  this.estado = "ganar";
-    //}
+    
     pop();
   }
 
@@ -146,7 +143,7 @@ class Portada {
     this.portada.resize(640, 480);
     image(this.portada, width/2, height/2);
     fill(51, 75, 109);
-    noStroke();
+
     rect(width-200, height-100, 150, 50);
     fill (255);
     textSize (20);
@@ -154,4 +151,5 @@ class Portada {
     text ("comenzar", width-200, height-100, 150, 50);
     pop();
   }
+
 }

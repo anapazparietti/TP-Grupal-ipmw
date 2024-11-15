@@ -15,8 +15,8 @@ class Meta {
     rect(this.x, this.y, this.ancho, this.alto);
     pop();
   }
-  
- movimientoAvanzan() {
+
+  movimientoAvanzan() {
     console.log("se acerca a la meta");
     this.x -= 5;
   }
@@ -24,5 +24,4 @@ class Meta {
     console.log("se aleja de lameta");
     this.x += 5;
   }
-   
 }

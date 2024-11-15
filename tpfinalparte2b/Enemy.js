@@ -20,5 +20,5 @@ class Enemy {
     this.x += 5;
   }
 
-   
+  
 }

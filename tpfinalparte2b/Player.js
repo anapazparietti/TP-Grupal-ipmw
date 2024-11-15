@@ -41,4 +41,10 @@ saltar(){
       this.y += 50/this.vel;
     }
   }
+  
+  calcularColision(x, an) {
+    if (this.x>x && this.x<x+an && this.y<height) {
+      return true;
+    }
+  }
 }
