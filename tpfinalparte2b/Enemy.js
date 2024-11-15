@@ -20,9 +20,5 @@ class Enemy {
     this.x += 5;
   }
 
-  calcularColision(x,an) {
-    if (this.x+this.ancho>x-an/2) {
-      return true;
-    }
-  }
+   
 }

@@ -24,4 +24,5 @@ class Meta {
     console.log("se aleja de lameta");
     this.x += 5;
   }
+   
 }

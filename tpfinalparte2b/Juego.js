@@ -5,7 +5,7 @@ class Juego {
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
     this.tigre = new Enemy(0, height-80, 100, 200);
-    this.meta = new Meta(width*4, height-80,200,50);
+    this.meta = new Meta(width*4, height-80, 200, 50);
     this.estado = "inicio";
   }
 
@@ -23,7 +23,10 @@ class Juego {
     }
   }
 
-  colisiones() {
+  colisiones(x1, x2, y1, y2, an2, al2) {
+    if (x1>x2 && x1<x2+an2 && y1>y2 && y1<y2+al2 ) {
+      return true;
+    }
   }
 
   pantInicio() {
@@ -53,12 +56,21 @@ class Juego {
       console.log("toque a isa");
       this.obstacle.x=this.isa.x+this.isa.ancho;
     }
-    
+
     //PERDER----
-    if (this.tigre.calcularColision(this.isa.x, this.isa.ancho)) {
-      console.log("tigre toca a isa");
-      this.estado = "perder";
+    //if (this.tigre.calcularColision(this.isa.x, this.isa.y, this.isa.ancho)) {
+    //  console.log("tigre toca a isa");
+    //  this.estado = "perder";
+    //}
+    if (this.colisiones(this.tigre.x, this.isa.x, this.tigre.y, this.isa.y, this.isa.ancho, this.isa.alto)) {
+    this.estado = "perder";
     }
+
+    //GANAR----
+    //if (this.meta.calcularColision(this.isa.x, this.isa.y, this.isa.ancho, this.isa.alto)) {
+    //  console.log("ganaste");
+    //  this.estado = "ganar";
+    //}
     pop();
   }
 
@@ -74,7 +86,7 @@ class Juego {
     rect(width/2, height-180, 100, 80);
   }
 
-//TECLAS---------
+  //TECLAS---------
   eventos(keyCode) {//cambiar eventos(nombre) por teclaIsPressed
     if (keyCode === RIGHT_ARROW) {
       this.obstacle.movimientoAvanzan();
@@ -86,12 +98,10 @@ class Juego {
       this.meta.movimientoRetroceden();
     }
   }
-
   tecla(keyCode) {
     if (keyCode === UP_ARROW) {
       console.log("UP");
       this.isa.saltar();
-     
     }
   }
 
@@ -104,10 +114,7 @@ class Juego {
       }
     }
     if (this.estado==="juego") {
-      /* if (this.botonZona(width-100, 0, 100, 50)) {
-       console.log('click');
-       this.estado = "perder";
-       } else */      if (this.botonZona(0, 0, 100, 50)) {
+      if (this.botonZona(0, 0, 100, 50)) {
         this.estado ="ganar";
       }
     }
