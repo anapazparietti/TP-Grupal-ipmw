@@ -9,12 +9,35 @@ class Juego {
   }
 
   mostrar() {//que aca se llame solo la pantalla actual, y haya un método (o una clase) en el que se expecifica que se ve en cada pantalla
+    
     if (this.estado === "inicio") {
-      background(0, 255, 0);
-      fill(255);
-      rect(width/2, height-180, 100, 80);
+      this.pantInicio();
+      
     } else if (this.estado === "juego") {
-      push();
+      this.pantJuego();
+      
+    } else if (this.estado === "perder") {
+      this.pantPerder();
+      
+    } else if (this.estado === "ganar") {
+      this.pantGanar();
+      
+    } else {
+      background(0);
+    }
+  }
+
+  colisiones() {
+  }
+  
+  pantInicio(){
+    background(0, 255, 0);
+    fill(255);
+    rect(width/2, height-180, 100, 80);
+  }
+  
+  pantJuego(){
+    push();
       background(200);
       fill(255);
       rect(0, 0, 100, 50);//ganar
@@ -35,20 +58,18 @@ class Juego {
         this.estado = "perder";
       }
       pop();
-    } else if (this.estado === "perder") {
-      background(255, 255, 0);
-      fill(255);
-      rect(width/2, height-180, 100, 80);
-    } else if (this.estado === "ganar") {
-      background(255, 0, 0);
-      fill(255);
-      rect(width/2, height-180, 100, 80);
-    } else {
-      background(0);
-    }
   }
-
-  colisiones() {
+  
+  pantPerder(){
+     background(255, 255, 0);
+     fill(255);
+     rect(width/2, height-180, 100, 80);
+  }
+  
+  pantGanar() {
+    background(255, 0, 0);
+    fill(255);
+    rect(width/2, height-180, 100, 80);
   }
 
   eventos(keyCode) {//cambiar eventos(nombre) por teclaIsPressed

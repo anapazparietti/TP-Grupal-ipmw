@@ -11,6 +11,10 @@ class Player {
     this.pSalta = false;
     //this.sprite = image(visual,px,py,ptam,ptam*1.5);//pensar en utilizar un resize, acordar de achicar las imagenes para que no sea pesado
   }
+  
+  actualizar(){
+    this.saltando()
+  }
   mostrar() {
     //este rectangulo es para marcar la zona en la que colisiona el jugador
     push();
@@ -29,10 +33,10 @@ saltar(){
 
   saltando() {
     if(this.pSalta){
-    this.y -=10;
-    this.pSalta =! this.pSalta;
+    this.y -= 200;  // altura del salto
+    this.pSalta = !this.pSalta;
     }
-    if (this.y<=height/2) {
+    if (this.y <=height-160) {
       console.log("bajando");
       this.y += 50/this.vel;
     }
