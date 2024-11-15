@@ -4,7 +4,7 @@ class Juego {
     //this.data = new Archivos();
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
-    this.tigre = new Enemy(0, height-80, 100, 200);
+    this.tigre = new Enemy(-100, height-80, 100, 200);
     this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
     this.menu= new Portada();
@@ -31,10 +31,7 @@ class Juego {
   }
 
   pantJuego() {
-    push();
     background(200);
-    fill(255);
-    rect(0, 0, 100, 50);//ganar
     fill(0, 255, 0);
     rect(0, height-80, width, 80);//piso
     this.obstacle.mostrar();
@@ -56,14 +53,12 @@ class Juego {
     if (this.isa.calcularColision(this.tigre.x, this.tigre.ancho)) {
       console.log("Tigre tocó a Isa");
       this.estado = "perder";
-    } 
-   //GANAR----
+    }
+    //GANAR----
     if (this.isa.calcularColision(this.meta.x, this.meta.ancho)) {
       console.log("ganaste :)");
       this.estado = "ganar";
     }
-    
-    pop();
   }
 
   pantPerder() {
@@ -94,6 +89,12 @@ class Juego {
     if (keyCode === UP_ARROW) {
       console.log("UP");
       this.isa.saltar();
+    }
+  }
+
+  tigreAtaca() {
+    if(this.estado==="juego"){
+    this.tigre.movimientoAvanza();
     }
   }
 
@@ -151,5 +152,4 @@ class Portada {
     text ("comenzar", width-200, height-100, 150, 50);
     pop();
   }
-
 }

@@ -13,18 +13,18 @@ Tiene una única vida, muere cuando es atrapado por el tigre --- LISTO
 --Tigre (Enemy):
 Solo puede avanzar, no puede morir. --- LISTO
 --Obstaculos:
-"Estaticos" solo se pueden superar saltandolos --- LISTO agachandose 
+"Estaticos" solo se pueden superar saltandolos --- LISTO  
 
 ESTADOS DEL JUEGO:
---Menú
+--Menú---LISTO
 --Juego
 --Pantalla perdiste
 --Pantalla ganaste
 
 CÓMO FUNCIONA EL JUEGO
 Cuando el personaje avanza, el fondo y el piso se mueve en sentido opuesto, trayendo los obstaculos que se ven fuera de pantalla --- LISTO
-Cuando el personaje retrocede o se queda quieto, el tigre avanza
+Cuando el personaje retrocede o se queda quieto, el tigre avanza---LISTO
 
 EXTRA
-un tiempo limite para llegar a la meta
+un tiempo limite para llegar a la meta(vemos cómo llegamos, xq habría que agregar una ui)
 */

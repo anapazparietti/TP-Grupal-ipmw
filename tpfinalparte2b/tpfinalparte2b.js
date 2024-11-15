@@ -13,6 +13,8 @@ function draw() {
   main.mostrar();
   if (keyIsPressed === true) {
     main.eventos(keyCode);
+  }else{
+   main.tigreAtaca(); 
   }
 }
 

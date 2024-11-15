@@ -14,6 +14,7 @@ class Meta {
     fill(0, 93, 0);
     rect(this.x, this.y, this.ancho, this.alto);
     pop();
+
   }
 
   movimientoAvanzan() {

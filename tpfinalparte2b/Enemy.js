@@ -17,7 +17,7 @@ class Enemy {
   }
 
   movimientoAvanza() {
-    this.x += 5;
+    this.x += 1;
   }
 
   
