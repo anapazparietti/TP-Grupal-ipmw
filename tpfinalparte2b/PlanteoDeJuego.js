@@ -13,7 +13,7 @@ Tiene una única vida, muere cuando es atrapado por el tigre --- LISTO
 --Tigre (Enemy):
 Solo puede avanzar, no puede morir. --- LISTO
 --Obstaculos:
-"Estaticos" solo se pueden superar saltandolos o agachandose 
+"Estaticos" solo se pueden superar saltandolos --- LISTO agachandose 
 
 ESTADOS DEL JUEGO:
 --Menú

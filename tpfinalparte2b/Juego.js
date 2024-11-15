@@ -1,17 +1,18 @@
 //ACORDARSE DE QUE EL JUEGO SE DEBE REINICIAR
 class Juego {
   constructor() {
-    this.data = new Archivos();
+    //this.data = new Archivos();
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
     this.tigre = new Enemy(0, height-80, 100, 200);
     this.meta = new Meta(width*4, height-80, 200, 50);
     this.estado = "inicio";
+    this.menu= new Portada();
   }
 
   mostrar() {//aca solo se muestra la pantalla actual
     if (this.estado === "inicio") {
-      this.pantInicio();
+      this.menu.mostrar();
     } else if (this.estado === "juego") {
       this.pantJuego();
     } else if (this.estado === "perder") {
@@ -27,12 +28,6 @@ class Juego {
     if (x1>x2 && x1<x2+an2 && y1>y2 && y1<y2+al2 ) {
       return true;
     }
-  }
-
-  pantInicio() {
-    background(0, 255, 0);
-    fill(255);
-    rect(width/2, height-180, 100, 80);
   }
 
   pantJuego() {
@@ -63,7 +58,7 @@ class Juego {
     //  this.estado = "perder";
     //}
     if (this.colisiones(this.tigre.x, this.isa.x, this.tigre.y, this.isa.y, this.isa.ancho, this.isa.alto)) {
-    this.estado = "perder";
+      this.estado = "perder";
     }
 
     //GANAR----
@@ -108,7 +103,7 @@ class Juego {
 
   estados() {
     if (this.estado==="inicio") {
-      if (this.botonZona(width/2, height-180, 100, 80)) {
+      if (this.botonZona(width-200, height-100, 150, 50)) {
         console.log('click');
         this.estado = "juego";
       }
@@ -134,5 +129,29 @@ class Juego {
 
   botonZona(x, y, ancho, alto) {
     return mouseX > x && mouseX < x+ancho && mouseY > y && mouseY < y+alto;
+  }
+}
+
+//CLASE PORTADA----------------------
+class Portada {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.alineacion = imageMode(CENTER);
+    this.portada = loadImage("data/portada.jpg");
+  }
+
+  mostrar() {
+    push();
+    this.portada.resize(640, 480);
+    image(this.portada, width/2, height/2);
+    fill(51, 75, 109);
+    noStroke();
+    rect(width-200, height-100, 150, 50);
+    fill (255);
+    textSize (20);
+    textAlign(CENTER, CENTER);
+    text ("comenzar", width-200, height-100, 150, 50);
+    pop();
   }
 }
