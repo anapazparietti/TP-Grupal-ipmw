@@ -17,11 +17,13 @@ class Player {
   }
 
   mostrar() {
+    if(keyIsPressed){
     if (this.sprite<18) {
       this.sprite++;
     } else {
       this.sprite = 0;
     }
+   }
     image(imagAvanzar[this.sprite], this.x, this.y);
     this.saltando();
   }
