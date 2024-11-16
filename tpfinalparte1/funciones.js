@@ -1,6 +1,3 @@
-//remplazar con los nuevos parametros
-//PONER PUNTO Y COMA
-
 //-----------PANTALLAS-------------------
 function cargarPantalla(imagenes, texto, x, y, xT, yT, tamT, aliT, rectTam) {
   imageMode(RIGHT);

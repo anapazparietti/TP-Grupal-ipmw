@@ -1,5 +1,5 @@
 //Naiara Victoria Coronel y Ana Paz Parietti comisión 1
-//Link de :
+//Link de Ana Paz Parietti: https://youtu.be/pY63AAPnwbs
 
 let imagenes = [];
 let estado;
