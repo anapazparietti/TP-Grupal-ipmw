@@ -15,11 +15,6 @@ if (this.x <= -this.ancho) {
       this.x = 0;
 }
 }
-  //actualizar() {
-  //  if (this.x<0-this.ancho/2) {
-  //    this.x=width+this.ancho/2;
-  //  }
-  //}
 
   mostrar() {
     this.actualizar();

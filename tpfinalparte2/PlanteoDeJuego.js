@@ -8,21 +8,21 @@ El personaje es perseguido por un tigre, si es atrapado por este pierde.
 
 MÉCANICAS
 --Player:
-Movimiento: avanzar, retroceder, saltar --- LISTO (agacharse)
-Tiene una única vida, muere cuando es atrapado por el tigre --- LISTO
+Movimiento: avanzar, retroceder, saltar.
+Tiene una única vida, muere cuando es atrapado por el tigre.
 --Tigre (Enemy):
-Solo puede avanzar, no puede morir. --- LISTO
+Solo puede avanzar, no puede morir.
 --Obstaculos:
-"Estaticos" solo se pueden superar saltandolos --- LISTO  
+"Estaticos" solo se pueden superar saltandolos. 
 
 ESTADOS DEL JUEGO:
---Menú---LISTO
+--Menú
 --Juego
 --Pantalla perdiste
 --Pantalla ganaste
 
 CÓMO FUNCIONA EL JUEGO
-Cuando el personaje avanza, el fondo y el piso se mueve en sentido opuesto, trayendo los obstaculos que se ven fuera de pantalla --- LISTO
-Cuando el personaje retrocede o se queda quieto, el tigre avanza---LISTO
+Cuando el personaje avanza, el fondo y el piso se mueven en sentido opuesto, trayendo los obstaculos que se ven fuera de pantalla.
+Cuando el personaje retrocede o se queda quieto, el tigre avanza.
 
 */
