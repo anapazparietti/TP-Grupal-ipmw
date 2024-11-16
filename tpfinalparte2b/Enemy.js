@@ -12,11 +12,7 @@ class Enemy {
     this.alto = 200;
   }
   mostrar() {
-    push();
-    image(imagenes[3], this.x-this.alto/2, this.y-10, this.alto,this.alto);
-    noFill();
-    rect(this.x, this.y, this.ancho, this.alto);
-    pop();
+    image(imagenes[3], this.x-this.alto/2, this.y+20, this.alto,this.alto);
   }
   movimientoAvanza() {
     this.x += 1;

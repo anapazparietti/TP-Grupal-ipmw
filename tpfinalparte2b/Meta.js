@@ -14,12 +14,7 @@ class Meta {
     this.alto = 200;
   }
   mostrar() {
-    push();
-    noFill();
-    rect(this.x, this.y, this.ancho, this.alto);
     image(imagenes[6], this.x, this.y, this.ancho, this.alto);
-    pop();
-
   }
 
   movimientoAvanzan() {

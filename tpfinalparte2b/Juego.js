@@ -88,6 +88,14 @@ class Juego {
       this.obstacle.movimientoAvanzan();
       this.meta.movimientoAvanzan();
       this.fondo.movimientoAvanzan();
+      //arreglo imagAvanza
+      if (frameCount%10===0) {
+        if (this.isa.sprite<20) {
+          this.isa.sprite++;
+        } else {
+          this.isa.sprite = 0;
+        }
+      }
     }
     if (keyCode === LEFT_ARROW) {
       this.obstacle.movimientoRetroceden();

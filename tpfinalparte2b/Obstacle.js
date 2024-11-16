@@ -18,11 +18,7 @@ class Obstacle {
   }
 
   mostrar() {
-    push();
-    noFill();
-    image(imagenes[5],this.x,this.y,this.ancho,this.alto);
-    rect(this.x, this.y, this.ancho, this.alto);
-    pop();
+    image(imagenes[5], this.x, this.y, this.ancho, this.alto);
   }
 
 

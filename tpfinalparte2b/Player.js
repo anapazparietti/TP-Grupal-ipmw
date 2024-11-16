@@ -9,8 +9,18 @@ class Player {
     this.alto = al;
     this.vel = 10;
     this.pSalta = false;
+    this.sprite = 0;
   }
 
+  //anima() {
+  //  if (frameCount%10===0) {
+  //    if (this.isa.sprite<20) {
+  //      this.isa.sprite++;
+  //    } else {
+  //      this.isa.sprite = 0;
+  //    }
+  //  }
+  //}
   reiniciar() {
     this.x =width/2;
     this.y=height-80-150;
@@ -18,16 +28,8 @@ class Player {
     this.alto=150;
   }
 
-  actualizar() {
-    this.saltando()
-  }
   mostrar() {
-    //este rectangulo es para marcar la zona en la que colisiona el jugador
-    push();
-    noFill();
-    rect(this.x, this.y, this.ancho, this.alto);
-    image(imagAvanzar[0], this.x, this.y);
-    pop();
+    image(imagAvanzar[this.sprite], this.x, this.y);
     this.saltando();
   }
 
