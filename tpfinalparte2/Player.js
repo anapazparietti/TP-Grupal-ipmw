@@ -17,6 +17,11 @@ class Player {
   }
 
   mostrar() {
+    if (this.sprite<18) {
+      this.sprite= 0;
+    } else {
+      this.sprite++;
+    }
     image(imagAvanzar[this.sprite], this.x, this.y);
     this.saltando();
   }
