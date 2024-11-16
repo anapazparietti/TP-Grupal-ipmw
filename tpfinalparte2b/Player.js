@@ -10,14 +10,14 @@ class Player {
     this.vel = 10;
     this.pSalta = false;
   }
-  
-  reiniciar(){
-  this.x =width/2;
-  this.y=height-80-150;
-  this.ancho=100;
-  this.alto=150;
+
+  reiniciar() {
+    this.x =width/2;
+    this.y=height-80-150;
+    this.ancho=100;
+    this.alto=150;
   }
-  
+
   actualizar() {
     this.saltando()
   }
@@ -51,31 +51,4 @@ class Player {
       return true;
     }
   }
-
-  //class Flecha {
-  //constructor() {
-  //  this.x = 150;
-  //  this.y = height/2;
-  //  this.l = 150;
-  //  this.fDisparada = false;
-  //}
-
-  //actualizar(){
-  //  this.disparado();
-  //  this.mostrar();
-  //}
-
-  //disparado() {
-  //  if (this.fDisparada===true){
-  //    this.x+=10;
-
-  //    if (this.x>width+this.l) {
-  //      this.x = 150;
-  //      this.fDisparada=false;
-  //    }
-  //  }
-  //}
-  //disparar(){
-  //  this.fDisparada = true;
-  //}
 }

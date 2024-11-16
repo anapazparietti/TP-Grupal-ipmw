@@ -7,16 +7,17 @@ let imagenes = [];
 let imagSalto =[];
 let imagAvanzar =[];
 let imagRetrocede=[];
-
+let musica;
 
 function preload() {
   for (let i=0; i<20; i++) {
-    imagAvanzar[i] = loadImage("data/run/run"+ i+".png");
+    imagAvanzar[i] = loadImage("data/isa/run"+ i+".png");
   }
-  for (let i=0; i<1; i++) {
+  for (let i=0; i<6; i++) {
     imagenes[i] = loadImage("data/image"+ i + ".png");
   }
-}-
+  musica=loadSound("data/musicafondo.mp3");
+}
 
 
 function setup() {
@@ -38,6 +39,9 @@ function draw() {
 
 function mousePressed() {
   main.estados();
+  if (!musica.isPlaying()) {
+    musica.loop(true);
+  }
 }
 
 function keyPressed() {

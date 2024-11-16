@@ -19,7 +19,7 @@ class Obstacle {
 
   mostrar() {
     push();
-    fill(0, 0, 255);
+    noFill();
     rect(this.x, this.y, this.ancho, this.alto);
     pop();
   }

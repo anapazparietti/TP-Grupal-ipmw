@@ -1,13 +1,12 @@
-//ACORDARSE DE QUE EL JUEGO SE DEBE REINICIAR
 class Juego {
   constructor() {
-    //this.data = new Archivos();
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
     this.tigre = new Enemy(-100, height-80, 100, 200);
     this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
     this.menu= new Portada(0, 0);
+    this.fondo = new Fondo(0, 0, 1280, 480);
   }
 
   mostrar() {//aca solo se muestra la pantalla actual
@@ -31,13 +30,16 @@ class Juego {
   }
 
   pantJuego() {
-    background(200);
+    background(0);
+    this.fondo.mostrar();
     fill(121, 59, 21);
     rect(0, height-80, width, 80);//piso
     this.tigre.mostrar();
     this.isa.mostrar();
     this.meta.mostrar();
     this.obstacle.mostrar();
+
+    //---------------COLISIONES------------------
     //los obstaculos desaparecen y reaparecen---
     if (this.obstacle.calcularColision(this.tigre.x, this.tigre.y, this.tigre.ancho, this.tigre.alto)) {
       console.log("CHOCO");
@@ -48,7 +50,6 @@ class Juego {
       console.log("toque a isa");
       this.obstacle.x=this.isa.x+this.isa.ancho;
     }
-
     //PERDER----
     if (this.isa.calcularColision(this.tigre.x, this.tigre.ancho)) {
       console.log("Tigre tocó a Isa");
@@ -60,29 +61,31 @@ class Juego {
       this.estado = "ganar";
     }
   }
-
+  //--------PANTALLAS
   pantPerder() {
-    background(255, 255, 0);
+    image(imagenes[1], 0, 0);
     fill(255);
     rect(width/2, height-180, 100, 80);
   }
 
   pantGanar() {
-    background(255, 0, 0);
+    image(imagenes[2], 0, 0);
     fill(255);
     rect(width/2, height-180, 100, 80);
   }
 
-  //TECLAS---------
+  //---------TECLAS Y MOVIMIENTO---------
   eventos(keyCode) {//cambiar eventos(nombre) por teclaIsPressed
     if (keyCode === RIGHT_ARROW) {
       this.obstacle.movimientoAvanzan();
       this.meta.movimientoAvanzan();
+      this.fondo.movimientoAvanzan();
     }
     if (keyCode === LEFT_ARROW) {
       this.obstacle.movimientoRetroceden();
       this.tigre.movimientoAvanza();
       this.meta.movimientoRetroceden();
+      this.fondo.movimientoRetroceden();
     }
   }
   tecla(keyCode) {
@@ -91,14 +94,13 @@ class Juego {
       this.isa.saltar();
     }
   }
-
   tigreAtaca() {
     if (this.estado==="juego") {
       this.tigre.movimientoAvanza();
     }
   }
 
-  //MAQUINA DE CAMBIO DE ESTADOS------
+  //--------MAQUINA DE CAMBIO DE ESTADOS------
   estados() {
     if (this.estado==="inicio") {
       if (this.botonZona(width-200, height-100, 150, 50)) {
