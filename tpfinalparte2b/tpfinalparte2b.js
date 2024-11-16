@@ -3,18 +3,32 @@
 //Link de :
 
 let main;
+let imagenes = [];
+let imagSalto =[];
+let imagAvanzar =[];
+let imagRetrocede=[];
+
+
+function preload() {
+  for (let i=0; i<20; i++) {
+    imagAvanzar = loadImage("data/run" +i+".png")
+  }
+}
 
 function setup() {
   createCanvas(640, 480);
   main = new Juego();
+  for (let i=0; i<imagAvanzar.length; i++) {
+    imagAvanzar[i].resize(100, 150);
+  }
 }
 
 function draw() {
   main.mostrar();
   if (keyIsPressed === true) {
     main.eventos(keyCode);
-  }else{
-   main.tigreAtaca(); 
+  } else {
+    main.tigreAtaca();
   }
 }
 

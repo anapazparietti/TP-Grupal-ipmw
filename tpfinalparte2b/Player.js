@@ -25,9 +25,9 @@ class Player {
   mostrar() {
     //este rectangulo es para marcar la zona en la que colisiona el jugador
     push();
-    //rectMode(CENTER);
-    fill(255, 0, 0);
+    noFill();
     rect(this.x, this.y, this.ancho, this.alto);
+    image(imagAvanzar[0], this.x, this.y);
     pop();
     this.saltando();
   }
