@@ -25,6 +25,4 @@ CÓMO FUNCIONA EL JUEGO
 Cuando el personaje avanza, el fondo y el piso se mueve en sentido opuesto, trayendo los obstaculos que se ven fuera de pantalla --- LISTO
 Cuando el personaje retrocede o se queda quieto, el tigre avanza---LISTO
 
-EXTRA
-un tiempo limite para llegar a la meta(vemos cómo llegamos, xq habría que agregar una ui)
 */

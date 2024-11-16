@@ -34,10 +34,10 @@ class Juego {
     background(200);
     fill(0, 255, 0);
     rect(0, height-80, width, 80);//piso
-    this.obstacle.mostrar();
     this.tigre.mostrar();
     this.isa.mostrar();
     this.meta.mostrar();
+    this.obstacle.mostrar();
     //los obstaculos desaparecen y reaparecen---
     if (this.obstacle.calcularColision(this.tigre.x, this.tigre.y, this.tigre.ancho, this.tigre.alto)) {
       console.log("CHOCO");
@@ -86,24 +86,28 @@ class Juego {
     }
   }
   tecla(keyCode) {
-    if (keyCode === UP_ARROW) {
+    if (keyCode === UP_ARROW && this.isa.y>0+this.isa.alto) {
       console.log("UP");
       this.isa.saltar();
     }
   }
 
   tigreAtaca() {
-    if(this.estado==="juego"){
-    this.tigre.movimientoAvanza();
+    if (this.estado==="juego") {
+      this.tigre.movimientoAvanza();
     }
   }
 
-
+  //MAQUINA DE CAMBIO DE ESTADOS------
   estados() {
     if (this.estado==="inicio") {
       if (this.botonZona(width-200, height-100, 150, 50)) {
         console.log('click');
         this.estado = "juego";
+        this.tigre.reiniciar();
+        this.meta.reiniciar();
+        this.isa.reiniciar();
+        this.obstacle.reiniciar();
       }
     }
     if (this.estado==="juego") {
@@ -144,7 +148,6 @@ class Portada {
     this.portada.resize(640, 480);
     image(this.portada, width/2, height/2);
     fill(51, 75, 109);
-
     rect(width-200, height-100, 150, 50);
     fill (255);
     textSize (20);

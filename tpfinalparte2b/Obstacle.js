@@ -10,6 +10,13 @@ class Obstacle {
     //this.sprite = image(visual,px,py,ptam,ptam*1.5);//pensar en utilizar un resize, acordar de achicar las imagenes para que no sea pesado
   }
 
+  reiniciar() {
+    this.x = width-50;
+    this.y = height-80-90;
+    this.ancho = 90;
+    this.alto = 90;
+  }
+
   mostrar() {
     push();
     fill(0, 0, 255);
