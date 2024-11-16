@@ -13,7 +13,7 @@ function preload() {
   for (let i=0; i<20; i++) {
     imagAvanzar[i] = loadImage("data/isa/run"+ i+".png");
   }
-  for (let i=0; i<6; i++) {
+  for (let i=0; i<7; i++) {
     imagenes[i] = loadImage("data/image"+ i + ".png");
   }
   musica=loadSound("data/musicafondo.mp3");

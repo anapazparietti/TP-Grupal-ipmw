@@ -1,7 +1,4 @@
 class Meta {
-  /*atrivutos: tiene una posición(x,y), un tamaño (alto y ancho), un sprite
-   métodos: movimiento(avanzar--->si isa retrocede, si se queda quieta y si se acaba el tiempo]), chocarse(con isa y destruye los objetos a su paso)
-   */
   constructor(px, py, an, al) {
     this.x = px;
     this.y = py-al;
@@ -18,8 +15,9 @@ class Meta {
   }
   mostrar() {
     push();
-    fill(0, 93, 0);
+    noFill();
     rect(this.x, this.y, this.ancho, this.alto);
+    image(imagenes[6], this.x, this.y, this.ancho, this.alto);
     pop();
 
   }
