@@ -6,7 +6,8 @@ class Juego {
     this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
     this.menu= new Portada(0, 0);
-    this.fondo = new Fondo(0, 0, 1280, 480);
+    this.fondo = new Fondo(0, -50, 1280, 480);
+    
   }
 
   mostrar() {//aca solo se muestra la pantalla actual
@@ -83,19 +84,19 @@ class Juego {
   }
 
   //---------TECLAS Y MOVIMIENTO---------
-  eventos(keyCode) {//cambiar eventos(nombre) por teclaIsPressed
+  eventos(keyCode) {
     if (keyCode === RIGHT_ARROW) {
       this.obstacle.movimientoAvanzan();
       this.meta.movimientoAvanzan();
       this.fondo.movimientoAvanzan();
       //arreglo imagAvanza
-      if (frameCount%10===0) {
-        if (this.isa.sprite<20) {
-          this.isa.sprite++;
-        } else {
-          this.isa.sprite = 0;
-        }
-      }
+      //if (frameCount%10===0) {
+      //  if (this.isa.sprite<20) {
+      //    this.isa.sprite++;
+      //  } else {
+      //    this.isa.sprite = 0;
+      //  }
+      //}
     }
     if (keyCode === LEFT_ARROW) {
       this.obstacle.movimientoRetroceden();

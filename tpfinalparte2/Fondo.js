@@ -10,15 +10,21 @@ class Fondo {
     this.y=0;
   }
 
-  actualizar() {
-    if (this.x<0-this.ancho/2) {
-      this.x=width+this.ancho/2;
-    }
-  }
+actualizar(){
+if (this.x <= -this.ancho) {
+      this.x = 0;
+}
+}
+  //actualizar() {
+  //  if (this.x<0-this.ancho/2) {
+  //    this.x=width+this.ancho/2;
+  //  }
+  //}
 
   mostrar() {
     this.actualizar();
     image(imagenes[4], this.x, this.y, this.ancho, this.alto);
+    image(imagenes[4], this.x + this.ancho, this.y, this.ancho, this.alto);
   }
   movimientoAvanzan() {
     console.log("personaje avanza");

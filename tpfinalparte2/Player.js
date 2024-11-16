@@ -8,7 +8,7 @@ class Player {
     this.pSalta = false;
     this.sprite = 0;
   }
-  
+
   reiniciar() {
     this.x =width/2;
     this.y=height-80-150;
@@ -18,9 +18,9 @@ class Player {
 
   mostrar() {
     if (this.sprite<18) {
-      this.sprite= 0;
-    } else {
       this.sprite++;
+    } else {
+      this.sprite = 0;
     }
     image(imagAvanzar[this.sprite], this.x, this.y);
     this.saltando();
