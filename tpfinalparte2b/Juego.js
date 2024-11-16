@@ -64,14 +64,22 @@ class Juego {
   //--------PANTALLAS
   pantPerder() {
     image(imagenes[1], 0, 0);
-    fill(255);
-    rect(width/2, height-180, 100, 80);
+    fill(165, 13, 16);
+    rect(width-200, height-100, 150, 50);
+    fill (255);
+    textSize (20);
+    textAlign(CENTER, CENTER);
+    text ("Ir a menu", width-200, height-100, 150, 50);
   }
 
   pantGanar() {
     image(imagenes[2], 0, 0);
-    fill(255);
+    fill(234, 83, 172);
     rect(width/2, height-180, 100, 80);
+    fill (255);
+    textSize (20);
+    textAlign(CENTER, CENTER);
+    text ("Ir a menu", width-200, height-100, 150, 50);
   }
 
   //---------TECLAS Y MOVIMIENTO---------
@@ -118,13 +126,13 @@ class Juego {
       }
     }
     if (this.estado==="perder") {
-      if (this.botonZona(width/2, height-180, 100, 80)) {
+      if (this.botonZona(width-200, height-100, 150, 50)) {
         console.log('click');
         this.estado = "inicio";
       }
     }
     if (this.estado==="ganar") {
-      if (this.botonZona(width/2, height-180, 100, 80)) {
+      if (this.botonZona(width-200, height-100, 150, 50)) {
         console.log('click');
         this.estado = "inicio";
       }
