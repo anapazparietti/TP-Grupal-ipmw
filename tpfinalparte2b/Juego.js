@@ -7,7 +7,7 @@ class Juego {
     this.tigre = new Enemy(-100, height-80, 100, 200);
     this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
-    this.menu= new Portada();
+    this.menu= new Portada(0, 0);
   }
 
   mostrar() {//aca solo se muestra la pantalla actual
@@ -32,7 +32,7 @@ class Juego {
 
   pantJuego() {
     background(200);
-    fill(0, 255, 0);
+    fill(121, 59, 21);
     rect(0, height-80, width, 80);//piso
     this.tigre.mostrar();
     this.isa.mostrar();
@@ -139,14 +139,11 @@ class Portada {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.alineacion = imageMode(CENTER);
-    this.portada = loadImage("data/portada.jpg");
   }
 
   mostrar() {
     push();
-    this.portada.resize(640, 480);
-    image(this.portada, width/2, height/2);
+    image(imagenes[0], this.x, this.y);
     fill(51, 75, 109);
     rect(width-200, height-100, 150, 50);
     fill (255);

@@ -9,7 +9,6 @@ class Player {
     this.alto = al;
     this.vel = 10;
     this.pSalta = false;
-    //this.sprite = image(visual,px,py,ptam,ptam*1.5);//pensar en utilizar un resize, acordar de achicar las imagenes para que no sea pesado
   }
   
   reiniciar(){

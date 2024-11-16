@@ -11,9 +11,13 @@ let imagRetrocede=[];
 
 function preload() {
   for (let i=0; i<20; i++) {
-    imagAvanzar = loadImage("data/run" +i+".png")
+    imagAvanzar[i] = loadImage("data/run/run"+ i+".png");
   }
-}
+  for (let i=0; i<1; i++) {
+    imagenes[i] = loadImage("data/image"+ i + ".png");
+  }
+}-
+
 
 function setup() {
   createCanvas(640, 480);
