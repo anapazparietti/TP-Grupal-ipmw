@@ -6,7 +6,7 @@ class Enemy {
     this.alto = al;
   }
   reiniciar() {
-    this.x = -100;
+    this.x = -10;
     this.y = height-80-200;
     this.ancho = 100;
     this.alto = 200;

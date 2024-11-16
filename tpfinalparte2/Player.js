@@ -1,7 +1,4 @@
 class Player {
-  /*atrivutos: tiene una posición(x,y), un tamaño (alto y ancho), un sprite, una vida
-   métodos: movimiento(saltar, avanzar y retroceder), morir, chocarse
-   */
   constructor(px, py, an, al) {
     this.x = px;
     this.y = py-al;
@@ -11,16 +8,7 @@ class Player {
     this.pSalta = false;
     this.sprite = 0;
   }
-
-  //anima() {
-  //  if (frameCount%10===0) {
-  //    if (this.isa.sprite<20) {
-  //      this.isa.sprite++;
-  //    } else {
-  //      this.isa.sprite = 0;
-  //    }
-  //  }
-  //}
+  
   reiniciar() {
     this.x =width/2;
     this.y=height-80-150;

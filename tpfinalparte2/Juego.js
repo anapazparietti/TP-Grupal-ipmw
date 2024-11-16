@@ -2,7 +2,7 @@ class Juego {
   constructor() {
     this.isa = new Player(width/2, height-80, 100, 150);
     this.obstacle = new Obstacle(width-50, height-80, 90, 90);
-    this.tigre = new Enemy(-100, height-80, 100, 200);
+    this.tigre = new Enemy(-10, height-80, 100, 200);
     this.meta = new Meta(width*4, height-80, 100, 200);
     this.estado = "inicio";
     this.menu= new Portada(0, 0);
@@ -108,6 +108,7 @@ class Juego {
     if (keyCode === UP_ARROW && this.isa.y>0+this.isa.alto) {
       console.log("UP");
       this.isa.saltar();
+      this.obstacle.movimientoAvanzan();
     }
   }
   tigreAtaca() {

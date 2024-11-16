@@ -1,4 +1,3 @@
-//RECORDAR VOLVER A GUADAR CON EL NOMBRE BIEN!!
 //Naiara Victoria Coronel y Ana Paz Parietti comisión 1
 //Link de :
 
