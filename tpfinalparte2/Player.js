@@ -18,7 +18,7 @@ class Player {
 
   mostrar() {
     if(keyIsPressed){
-    if (this.sprite<18) {
+    if (this.sprite<19) {
       this.sprite++;
     } else {
       this.sprite = 0;
